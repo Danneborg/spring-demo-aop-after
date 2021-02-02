@@ -15,9 +15,10 @@ public class AfterReturningDemoApp {
 
         AccountDAO accountDAO = context.getBean("accountDAO", AccountDAO.class);
 
+        System.out.println("----------Performing After Throwing----------");
+
         List<Account> accountList = accountDAO.getAccounts();
 
-        System.out.println("----------Performing After Throwing----------");
         accountList.forEach(System.out::println);
 
         context.close();
