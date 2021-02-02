@@ -31,6 +31,14 @@ public class MyAspectLoggingDemo {
 
         System.out.println("Method " + method);
         System.out.println("Result "+result);
+
+        convertAccountMethodToUpperCase(result);
+    }
+
+    private void convertAccountMethodToUpperCase(List<Account> result) {
+        result.forEach( account -> {
+            account.setName(account.getName().toUpperCase());
+        });
     }
 
     @Before("kononikhin.Aspect.AOPExressions.excludeGettersAndSetters()")
