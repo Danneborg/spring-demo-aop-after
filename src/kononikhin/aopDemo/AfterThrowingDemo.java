@@ -7,20 +7,28 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 
 import java.util.List;
 
-public class AfterReturningDemoApp {
+public class AfterThrowingDemo {
+
     public static void main(String[] args) {
 
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(DemoConfig.class);
 
         AccountDAO accountDAO = context.getBean("accountDAO", AccountDAO.class);
+        List<Account> accountList = null;
+        System.out.println("----------Performing After Throwing----------");
+        try {
+            //boolean tag to simulate exception
+            boolean booleanException = true;
+            accountList = accountDAO.getAccounts(booleanException);
 
-        System.out.println("----------Performing After Returning----------");
+        } catch (Exception e) {
 
-        List<Account> accountList = accountDAO.getAccounts(true);
+            System.out.println("----------Exception has been thrown----------");
+
+        }
 
         accountList.forEach(System.out::println);
 
         context.close();
-
     }
 }

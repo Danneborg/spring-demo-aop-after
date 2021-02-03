@@ -13,11 +13,18 @@ public class AccountDAO {
     private String name;
     private int code;
 
-    public List<Account> getAccounts(){
+    public List<Account> getAccounts(boolean booleanException) {
+
+        //for academic purpose simulating exception
+
+        if (booleanException) {
+            throw new RuntimeException("This is academic exception");
+        }
+
         List<Account> accounts = new ArrayList<>();
-        accounts.add(new Account("John","Silver"));
-        accounts.add( new Account("John1","Silver 1"));
-        accounts.add( new Account("John1","Silver 2"));
+        accounts.add(new Account("John", "Silver"));
+        accounts.add(new Account("John1", "Silver 1"));
+        accounts.add(new Account("John1", "Silver 2"));
 
 
         return accounts;
