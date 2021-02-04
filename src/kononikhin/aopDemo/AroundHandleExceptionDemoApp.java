@@ -16,7 +16,7 @@ public class AroundHandleExceptionDemoApp {
 
         TrafficFortuneService fortuneService = context.getBean("trafficFortuneService", TrafficFortuneService.class);
 
-        boolean academicBoolean = false;
+        boolean academicBoolean = true;
 
         logger.info("----Performing Around Demo App----");
 

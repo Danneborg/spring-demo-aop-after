@@ -28,6 +28,7 @@ public class AroundWithHandlingExceptionsAspect {
         } catch (Exception exc) {
             logger.warning(exc.getMessage());
             result = "AroundWithHandlingExceptionsAspect worked!";
+            throw exc;
         }
 
 
