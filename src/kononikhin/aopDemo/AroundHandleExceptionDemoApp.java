@@ -4,7 +4,11 @@ import kononikhin.Service.TrafficFortuneService;
 import kononikhin.aopDemo.Config.DemoConfig;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-public class AroundDemoApp {
+import java.util.logging.Logger;
+
+public class AroundHandleExceptionDemoApp {
+
+    private static Logger logger = Logger.getLogger(AroundHandleExceptionDemoApp.class.getName());
 
     public static void main(String[] args) {
 
@@ -12,11 +16,13 @@ public class AroundDemoApp {
 
         TrafficFortuneService fortuneService = context.getBean("trafficFortuneService", TrafficFortuneService.class);
 
-        System.out.println("----Performing Around Demo App----");
+        boolean academicBoolean = false;
 
-        System.out.println(fortuneService.getForuneOld());
+        logger.info("----Performing Around Demo App----");
 
-        System.out.println("----Performing finished----");
+        logger.info(fortuneService.getFortune(academicBoolean));
+
+        logger.info("----Performing finished----");
 
         context.close();
 

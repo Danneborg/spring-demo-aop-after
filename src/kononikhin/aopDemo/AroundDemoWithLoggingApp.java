@@ -18,7 +18,7 @@ public class AroundDemoWithLoggingApp {
 
         logger.info("----Performing Around Demo App----");
 
-        logger.info(fortuneService.getFortune());
+        logger.info(fortuneService.getForuneOld());
 
         logger.info("----Performing finished----");
 

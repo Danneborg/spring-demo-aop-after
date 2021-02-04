@@ -1,8 +1,6 @@
 package kononikhin.Aspect;
 
-import kononikhin.aopDemo.AroundDemoWithLoggingApp;
 import org.aspectj.lang.ProceedingJoinPoint;
-import org.aspectj.lang.annotation.AfterThrowing;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.springframework.core.annotation.Order;
@@ -13,8 +11,8 @@ import java.util.logging.Logger;
 @Aspect
 @Component
 @Order(-77)
-public class AroundAspect {
-    private Logger logger = Logger.getLogger(AroundAspect.class.getName());
+public class AroundWithLoggingAspect {
+    private Logger logger = Logger.getLogger(AroundWithLoggingAspect.class.getName());
 
     @Around("execution(* kononikhin.Service.TrafficFortuneService.getForuneOld(..))")
     public Object aroundGetFortune(ProceedingJoinPoint joinPoint) throws Throwable {
